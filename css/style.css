@@ -1,7 +1,7 @@
 @font-face
 {
 	font-family: 'HelveticaNeue';
-	src: url('/assets/fonts/HelveticaNeueLTStd-Blk.woff');
+	src: url('../assets/fonts/HelveticaNeueLTStd-Blk.woff');
 }
 
 body, html,
@@ -130,7 +130,7 @@ video
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-image: url('/assets/icons/volume-on.svg');
+	background-image: url('../assets/icons/volume-on.svg');
 	opacity: 0;
 	transition: opacity linear 0.1s;
 }
@@ -143,7 +143,7 @@ video
 .video_muted:checked ~ .video_mute
 {
 	opacity: 1;
-	background-image: url('/assets/icons/volume-off.svg');
+	background-image: url('../assets/icons/volume-off.svg');
 }
 
 .nav
