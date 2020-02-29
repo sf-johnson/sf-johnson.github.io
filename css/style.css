@@ -4,8 +4,16 @@
 	src: url('../assets/fonts/HelveticaNeueLTStd-Blk.woff');
 }
 
+@keyframes blink
+{
+	0%   { opacity: 0; }
+	50%  { opacity: 1; }
+	100% { opacity: 0; }
+}
+
 body, html,
 main, header, footer,
+button, input,
 div, p, span, a,
 h1, h2, h3, h4, h5, h6,
 ul, ol, li
@@ -19,6 +27,7 @@ ul, ol, li
 	color: inherit;
 	border: none;
 	background: transparent;
+	text-transform: inherit;
 }
 
 ul, ol, li
@@ -26,47 +35,62 @@ ul, ol, li
 	list-style: none;
 }
 
+video,
+img
+{
+	display: block;
+}
+
 html,
 body
 {
-	width: 100%;
-	height: 100%;
 	background-color: black;
-}
-
-video
-{
-	display: block;
-	object-position: center;
-	object-fit: cover;
 }
 
 .wrapper
 {
+	position: relative;
 	width: 100%;
-	height: 100%;
-	padding: 20px 0;
-    box-sizing: border-box;
 	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 20px;
 	text-transform: uppercase;
+	letter-spacing: 0.02em;
 	color: white;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
 	align-items: center;
 }
 
-.header_logo
+.header
+{
+	margin-top: 100px;
+	margin-bottom: 300px;
+	width: 400px;
+}
+
+.header_logo,
+.header_logo > img
 {
 	width: 100%;
 }
 
-.video
+.header_sub
 {
-	position: relative;
+	margin-top: 10px;
+	font-size: 0.8em;
+	text-align: center;
 }
 
-.video_mask
+.viewfinder
+{
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	top: calc(50vh - 150px);
+	left: calc(50vw - 150px);
+}
+
+.viewfinder_mask
 {
 	position: absolute;
 	width: 100%;
@@ -75,7 +99,7 @@ video
 	border-radius: 15px;
 }
 
-.video_mask-1
+.viewfinder_mask-1
 {
 	filter: blur(5px);
 	border-color: red;
@@ -85,7 +109,7 @@ video
 	left: -5px;
 }
 
-.video_mask-2
+.viewfinder_mask-2
 {
 	filter: blur(1px);
 	border-color: black;
@@ -95,7 +119,7 @@ video
 	left: -10px;
 }
 
-.video_mask-2::before
+.viewfinder_mask-2::before
 {
 	content: '';
 	width: 0;
@@ -107,62 +131,122 @@ video
 	bottom: 2px;
 }
 
-.video_media
+.tracks
 {
-	width: 100%;
-	height: 100%;
+	width: 500px;
+	margin-bottom: 250px;
 }
 
-.video_muted
+.tracks > * + *
 {
-	display: none;
+	margin-top: 200px;
 }
 
-.video_mute
+.track
+{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+}
+
+.track > * + *
+{
+	margin-top: 2px;
+}
+
+.track:nth-child(1) { margin-left: 00%; }
+.track:nth-child(2) { margin-left: 50%; }
+.track:nth-child(3) { margin-left: 15%; }
+
+.track_title
+{
+	font-size: 1.1em;
+}
+
+.track_date
+{
+	font-size: 0.8em;
+}
+
+.track_play
+{
+	font-size: 0.7em;
+	visibility: hidden;
+}
+
+.track:hover .track_play
+{
+	visibility: visible;
+	animation: blink linear 0.8s infinite;
+}
+
+.track_play::before
+{
+	content: '(';
+	margin-right: 0.1em;
+}
+
+.track_play::after
+{
+	content: ')';
+	margin-left: 0.1em;
+}
+
+.video
 {
 	position: absolute;
-	cursor: pointer;
-	opacity: 0.7;
-	width: 50px;
-	height: 50px;
-	top: calc(50% - 25px);
-	left: calc(50% - 25px);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-image: url('../assets/icons/volume-on.svg');
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	opacity: 0;
-	transition: opacity linear 0.1s;
+	transition: opacity linear 0.3s;
+	object-position: center;
+	object-fit: cover;
 }
 
-.video:hover .video_mute
-{
-	opacity: 0.2;
-}
-
-.video_muted:checked ~ .video_mute
+.video[data-active]
 {
 	opacity: 1;
-	background-image: url('../assets/icons/volume-off.svg');
 }
 
-.nav
+.bio
 {
-	font-size: 30px;
+	width: 650px;
+	text-align: center;
+	margin-bottom: 250px;
+}
+
+.links
+{
+	font-size: 0.7em;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	margin-bottom: 250px;
+}
+
+.links > * + *
+{
+	margin-top: 15px;
+}
+
+.link
+{
+	border-bottom: solid white 2px;
+	text-align: center;
+}
+
+.footer
+{
+	margin-bottom: 30px;
+	font-size: 0.6em;
 }
 
 @media ( min-width: 500px ) {
-	.header { width: 450px; }
-	.video  { width: 300px; height: 300px; }
-	.nav    { width: 350px; }
 }
 
 @media ( max-width: 500px ) {
-	.header { width: 90vw; }
-	.video  { width: 85vw; height: 85vw; }
-	.nav    { width: 75vw }
 }
