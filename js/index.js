@@ -6,25 +6,31 @@ window.onload = function() {
 		audios : document.querySelectorAll( '.audio' ),
 		audioActiveIndex : null,
 		tracks : document.querySelectorAll( '.track' ),
+		initEmail : function() {},
+		initTracks : function() {
+			this.tracks.forEach( ( function( track, i ) {
+				if ( track.getAttribute( 'data-preview' ) === 'true' ) {
+					track.onclick = ( function() {
+						this.setActiveAudio( i );
+					} ).bind( this );
+				}
+			} ).bind( this ) );
+		},
 		setActiveVideo : function( i ) {
 			if ( this.videoActiveIndex === i ) return;
 			if ( this.videos.length <= i ) return;
 
 			this.videoActiveIndex = i;
 			this.videos.forEach( function( video, j ) {
-				if ( i === j ) {
-					video.setAttribute( 'data-active', true );
-				} else {
-					video.removeAttribute( 'data-active' );
-				}
-			}, this );
+				video.setAttribute( 'data-active', ( i === j ) );
+			} );
 		},
 		setActiveAudio : function( i ) {
 			if ( this.audioActiveIndex === i ) return;
 			if ( this.audios.length <= i ) return;
 
 			this.audioActiveIndex = i;
-			this.audios.forEach( function( audio, j ) {
+			this.audios.forEach( ( function( audio, j ) {
 				if ( i === j ) {
 					audio.play();
 					audio.onended = ( function() {
@@ -36,7 +42,7 @@ window.onload = function() {
 					audio.pause();
 					audio.currentTime = 0.0;
 				}
-			}, this );
+			} ).bind( this ) );
 		},
 		checkScrollVideos : function() {
 			var minDist = Infinity;
@@ -59,20 +65,13 @@ window.onload = function() {
 				var scroll = window.pageYOffset + window.innerHeight;
 				var scrollRef = fade.offsetTop;
 
-				if ( scroll > scrollRef ) {
-					fade.setAttribute( 'data-show', true );
-				} else {
-					fade.removeAttribute( 'data-show' );
-				}
+				fade.setAttribute( 'data-show', ( scroll > scrollRef ) );
 			} );
 		}
 	};
 
-	app.tracks.forEach( function( track, i ) {
-		track.addEventListener( 'click', function() {
-			app.setActiveAudio( i );
-		} );
-	} );
+	app.initEmail();
+	app.initTracks();
 
 	( window.onscroll = function () {
 		app.checkScrollVideos();
