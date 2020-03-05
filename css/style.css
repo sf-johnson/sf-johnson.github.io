@@ -61,6 +61,17 @@ body
 	align-items: center;
 }
 
+.fade
+{
+	opacity: 0;
+	transition: opacity linear 1s;
+}
+
+.fade[data-show]
+{
+	opacity: 1;
+}
+
 /*** HEADER ***/
 
 .header
@@ -158,7 +169,7 @@ body
 	bottom: 2px;
 }
 
-.video
+.viewfinder_video
 {
 	position: absolute;
 	top: 0;
@@ -171,7 +182,7 @@ body
 	object-fit: cover;
 }
 
-.video[data-active]
+.viewfinder_video[data-active]
 {
 	opacity: 1;
 }
@@ -195,12 +206,16 @@ body
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.track[data-preview]
+{
 	cursor: pointer;
 }
 
 .track > * + *
 {
-	margin-top: 2px;
+	margin-top: 5px;
 }
 
 .track:nth-child(1) { margin-left: 00%; }
@@ -232,7 +247,7 @@ body
 	visibility: hidden;
 }
 
-.track:hover .track_play
+.track[data-preview]:hover .track_play
 {
 	visibility: visible;
 	animation: blink linear 0.8s infinite;

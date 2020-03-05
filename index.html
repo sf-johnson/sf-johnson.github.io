@@ -3,29 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>S.F.JOHNSON</title>
-		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-		<link rel="icon" type="image/png" href="assets/logos/favicon.72.png">
-		<link rel="icon" href="assets/logos/favicon.32.png"  sizes="32x32">
-		<link rel="icon" href="assets/logos/favicon.128.png" sizes="128x128">
+		<meta name="description" content="Songs from an empty orchestra">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="S.F.Johnson">
+		<meta name="twitter:description" content="Songs from an empty orchestra">
+		<meta name="twitter:image" content="https://www.sfjohnson.net/assets/logos/icon.500.png">
+		<meta property="og:url" content="https://www.sfjohnson.net">
+		<meta property="og:title" content="S.F.Johnson">
+		<meta property="og:description" content="Songs from an empty orchestra">
+		<meta property="og:image" content="https://www.sfjohnson.net/assets/logos/icon.500.png">
+		<title>S.F.Johnson</title>
+		<link rel="icon" type="image/png" href="assets/logos/icon.32.png"  sizes="32x32">
+		<link rel="icon" type="image/png" href="assets/logos/icon.128.png" sizes="128x128">
+		<link rel="icon" type="image/png" href="assets/logos/icon.500.png" sizes="500x500">
 		<link rel="stylesheet" type="text/css" href="css/style.css?v=2020.02.29.1">
+		<noscript>
+			<style type="text/css">
+				.fade { opacity: 1!important; }
+			</style>
+		</noscript>
 	</head>
 	<body>
 		<div class="viewfinder">
-			<video class="video" src="assets/videos/midnight.mp4"     loop autoplay muted></video>
-			<video class="video" src="assets/videos/asphyxiation.mp4" loop autoplay muted></video>
-			<video class="video" src="assets/videos/baby.mp4"         loop autoplay muted></video>
+			<video class="viewfinder_video video" src="assets/videos/midnight.mp4"     loop autoplay muted></video>
+			<video class="viewfinder_video video" src="assets/videos/asphyxiation.mp4" loop autoplay muted></video>
+			<video class="viewfinder_video video" src="assets/videos/baby.mp4"         loop autoplay muted></video>
 
 			<div class="viewfinder_mask viewfinder_mask-1"></div>
 			<div class="viewfinder_mask viewfinder_mask-2"></div>
-
-			<audio class="audio" src="assets/sounds/midnight.mp3"     loop></audio>
-			<audio class="audio" src="assets/sounds/asphyxiation.mp3" loop></audio>
-			<audio class="audio" src="assets/sounds/baby.mp3"         loop></audio>
 		</div>
 
 		<div class="wrapper">
-			<header class="header">
+			<header class="header fade">
 				<h1 class="header_logo">
 					<img src="assets/logos/white.png" alt="S.F.Johnson">
 				</h1>
@@ -33,38 +42,39 @@
 			</header>
 
 			<ol class="tracks">
-				<li class="track">
+				<li class="track fade" data-preview>
 					<h6 class="track_title">Midnight</h6>
-					<p  class="track_date">10.04.20</p>
-					<p  class="track_play">play</p>
+					<p class="track_date">10.04.20</p>
+					<p class="track_play">play</p>
+					<audio class="track_audio audio" src="assets/sounds/midnight.teaser.mp3"></audio>
 				</li>
 
-				<li class="track">
+				<li class="track fade">
 					<h6 class="track_title">Asphyxiation</h6>
-					<p  class="track_date">24.04.20</p>
-					<p  class="track_play">play</p>
+					<p class="track_date">24.04.20</p>
+					<p class="track_play">play</p>
 				</li>
 
-				<li class="track">
+				<li class="track fade">
 					<h6 class="track_title">Baby, I Know</h6>
-					<p  class="track_date">08.05.20</p>
-					<p  class="track_play">play</p>
+					<p class="track_date">08.05.20</p>
+					<p class="track_play">play</p>
 				</li>
 			</ol>
 
-			<p class="bio">
+			<p class="bio fade">
 				S.F. Johnson is a singer, guitarist and songwriter from Newcastle Upon Tyne, England.<br>
 				He currently resides in Tokyo.
 			</p>
 
 			<ul class="links">
-				<li class="link"><a target="_blank" href="https://music.apple.com/us/album/midnight-single/1499361426?ls=1">Apple Music</a></li>
-				<li class="link"><a target="_blank" href="https://open.spotify.com/artist/0EudqBbdt4HSD0gK7ijpMI">Spotify</a></li>
-				<li class="link"><a target="_blank" href="https://www.instagram.com/geordiepsalms/">Instagram</a></li>
-				<li class="link"><a target="_blank" href="mailto:test[at]hotmail.com" id="email">Contact</a></li>
+				<li class="link fade"><a target="_blank" href="https://music.apple.com/us/album/midnight-single/1499361426?ls=1">Apple Music</a></li>
+				<li class="link fade"><a target="_blank" href="https://open.spotify.com/artist/0EudqBbdt4HSD0gK7ijpMI">Spotify</a></li>
+				<li class="link fade"><a target="_blank" href="https://www.instagram.com/geordiepsalms/">Instagram</a></li>
+				<li class="link fade"><a target="_blank" href="mailto:test[at]hotmail.com" id="email">Contact</a></li>
 			</ul>
 
-			<footer class="footer">
+			<footer class="footer fade">
 				<p class="footer_copyright">© 2020 S.F.Johnson</p>
 			</footer>
 		</div>
