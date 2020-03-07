@@ -13,10 +13,10 @@
 		<meta property="og:description" content="Songs from an empty orchestra">
 		<meta property="og:image" content="https://www.sfjohnson.net/assets/logos/icon.500.png">
 		<title>S.F. Johnson</title>
-		<link rel="icon" type="image/png" href="assets/logos/icon.32.png"  sizes="32x32">
-		<link rel="icon" type="image/png" href="assets/logos/icon.128.png" sizes="128x128">
-		<link rel="icon" type="image/png" href="assets/logos/icon.500.png" sizes="500x500">
-		<link rel="stylesheet" type="text/css" href="css/style.css?v=2020.02.29.1">
+		<link rel="icon" type="image/png" href="assets/logos/favicon.32.png"  sizes="32x32">
+		<link rel="icon" type="image/png" href="assets/logos/favicon.128.png" sizes="128x128">
+		<link rel="icon" type="image/png" href="assets/logos/favicon.500.png" sizes="500x500">
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=2020.03.07.1">
 		<noscript>
 			<style type="text/css">
 				.fade { opacity: 1!important; }
@@ -25,9 +25,9 @@
 	</head>
 	<body>
 		<div class="viewfinder">
-			<video class="viewfinder_video video" src="assets/videos/midnight.mp4"     loop autoplay muted></video>
-			<video class="viewfinder_video video" src="assets/videos/asphyxiation.mp4" loop autoplay muted></video>
-			<video class="viewfinder_video video" src="assets/videos/baby.mp4"         loop autoplay muted></video>
+			<video class="viewfinder_video video" src="assets/videos/midnight.mp4"     data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_video video" src="assets/videos/asphyxiation.mp4" data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_video video" src="assets/videos/baby.mp4"         data-active="false" loop autoplay muted playsinline></video>
 
 			<div class="viewfinder_mask viewfinder_mask-1"></div>
 			<div class="viewfinder_mask viewfinder_mask-2"></div>
@@ -49,14 +49,14 @@
 					<audio class="track_audio audio" src="assets/sounds/midnight.teaser.mp3"></audio>
 				</li>
 
-				<li class="track fade" data-preview="false">
+				<li class="track fade" data-preview="true">
 					<h6 class="track_title">Asphyxiation</h6>
 					<p class="track_date">24.04.20</p>
 					<p class="track_play">play</p>
 					<audio class="track_audio audio" src="assets/sounds/asphyxiation.mp3"></audio>
 				</li>
 
-				<li class="track fade" data-preview="false">
+				<li class="track fade" data-preview="true">
 					<h6 class="track_title">Baby, I Know</h6>
 					<p class="track_date">08.05.20</p>
 					<p class="track_play">play</p>
@@ -73,7 +73,7 @@
 				<li class="link fade"><a target="_blank" href="https://music.apple.com/us/album/midnight-single/1499361426?ls=1">Apple Music</a></li>
 				<li class="link fade"><a target="_blank" href="https://open.spotify.com/artist/0EudqBbdt4HSD0gK7ijpMI">Spotify</a></li>
 				<li class="link fade"><a target="_blank" href="https://www.instagram.com/geordiepsalms/">Instagram</a></li>
-				<li class="link fade"><a target="_blank" href="mailto:test[at]hotmail.com" id="email">Contact</a></li>
+				<li class="link fade"><a target="_blank" href="mailto:sfjohnsonmusic.at.gmail.com" id="email">Contact</a></li>
 			</ul>
 
 			<footer class="footer fade">
@@ -82,6 +82,6 @@
 		</div>
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-		<script type="text/javascript" src="js/index.js?v=2020.02.29.1"></script>
+		<script type="text/javascript" src="js/index.js?v=2020.03.07.1"></script>
 	</body>
 </html>
