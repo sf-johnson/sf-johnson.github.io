@@ -1,11 +1,13 @@
-window.onload = function() {
+window.addEventListener( 'DOMContentLoaded', function() {
 	var app = {
 		fades : document.querySelectorAll( '.fade' ),
+		artwork : document.querySelector( '.artwork' ),
 		videos : document.querySelectorAll( '.video' ),
 		videoActiveIndex : null,
 		audios : document.querySelectorAll( '.audio' ),
 		audioActiveIndex : null,
 		tracks : document.querySelectorAll( '.track' ),
+		trackPlayButtons : document.querySelectorAll( '.track_play' ),
 		initEmail : function() {},
 		initTracks : function() {
 			this.tracks.forEach( ( function( track, i ) {
@@ -26,30 +28,33 @@ window.onload = function() {
 			} );
 		},
 		setActiveAudio : function( i ) {
-			if ( this.audioActiveIndex === i ) return;
 			if ( this.audios.length <= i ) return;
 
 			this.audioActiveIndex = i;
 			this.audios.forEach( ( function( audio, j ) {
-				if ( i === j ) {
+				if ( i === j && audio.paused ) {
 					audio.play();
 					audio.onended = ( function() {
+						this.trackPlayButtons[j].innerText = 'play';
 						this.audioActiveIndex = null;
 						audio.pause();
 						audio.currentTime = 0.0;
 					} ).bind( this );
+
+					this.trackPlayButtons[j].innerText = 'stop';
 				} else {
 					audio.pause();
 					audio.currentTime = 0.0;
+					this.trackPlayButtons[j].innerText = 'play';
 				}
 			} ).bind( this ) );
 		},
 		checkScrollVideos : function() {
 			var minDist = Infinity;
 			var minIndex = null;
+			var scroll = window.pageYOffset + 0.5 * window.innerHeight;
 
 			this.tracks.forEach( function( track, i ) {
-				var scroll = window.pageYOffset + 0.5 * window.innerHeight;
 				var dist = Math.abs( scroll - track.offsetTop );
 
 				if ( dist < minDist ) {
@@ -77,4 +82,4 @@ window.onload = function() {
 		app.checkScrollVideos();
 		app.checkScrollFades();
 	} )();
-}
+} );
