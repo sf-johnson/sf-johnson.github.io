@@ -49,12 +49,11 @@ window.addEventListener( 'DOMContentLoaded', function() {
 			} );
 		},
 		setActiveAudio : function( i ) {
-			if ( this.audioActiveIndex === i ) return;
 			if ( this.audios.length <= i ) return;
 
 			this.audioActiveIndex = i;
 			this.audios.forEach( ( function( audio, j ) {
-				if ( i === j ) {
+				if ( i === j && audio.paused ) {
 					audio.play();
 					audio.onended = ( function() {
 						this.audioActiveIndex = null;

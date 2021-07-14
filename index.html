@@ -16,7 +16,9 @@
 		<link rel="icon" type="image/png" href="assets/logos/favicon.32.png"  sizes="32x32">
 		<link rel="icon" type="image/png" href="assets/logos/favicon.128.png" sizes="128x128">
 		<link rel="icon" type="image/png" href="assets/logos/favicon.500.png" sizes="500x500">
-		<link rel="stylesheet" type="text/css" href="css/style.css?v=2020.03.10.1">
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=2021.07.15.1">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js" defer></script>
+		<script type="text/javascript" src="js/index.js?v=2021.07.15.1" defer></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160020412-1"></script>
 		<script>
 		window.dataLayer = window.dataLayer || [];
@@ -32,9 +34,11 @@
 	</head>
 	<body>
 		<div class="viewfinder">
-			<video class="viewfinder_video video" src="assets/videos/midnight.mp4"     data-active="false" loop autoplay muted playsinline></video>
-			<video class="viewfinder_video video" src="assets/videos/asphyxiation.mp4" data-active="false" loop autoplay muted playsinline></video>
-			<video class="viewfinder_video video" src="assets/videos/baby.mp4"         data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_visual video" src="assets/videos/future_blues.mp4" data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_visual video" src="assets/videos/woman.mp4"        data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_visual video" src="assets/videos/midnight.mp4"     data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_visual video" src="assets/videos/asphyxiation.mp4" data-active="false" loop autoplay muted playsinline></video>
+			<video class="viewfinder_visual video" src="assets/videos/baby.mp4"         data-active="false" loop autoplay muted playsinline></video>
 
 			<div class="viewfinder_mask viewfinder_mask-1"></div>
 			<div class="viewfinder_mask viewfinder_mask-2"></div>
@@ -49,6 +53,20 @@
 			</header>
 
 			<ol class="tracks">
+				<li class="track fade" data-preview="false">
+					<h6 class="track_title">Future Blues</h6>
+					<p class="track_date">18.06.21</p>
+					<p class="track_play">play</p>
+					<audio class="track_audio audio" src="#"></audio>
+				</li>
+
+				<li class="track fade" data-preview="false">
+					<h6 class="track_title">Woman</h6>
+					<p class="track_date">16.10.20</p>
+					<p class="track_play">play</p>
+					<audio class="track_audio audio" src="#"></audio>
+				</li>
+
 				<li class="track fade" data-preview="true">
 					<h6 class="track_title">Midnight</h6>
 					<p class="track_date">10.04.20</p>
@@ -84,11 +102,8 @@
 			</ul>
 
 			<footer class="footer fade">
-				<p class="footer_copyright">© 2020 S.F.Johnson</p>
+				<p class="footer_copyright">© 2021 S.F.Johnson</p>
 			</footer>
 		</div>
-
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-		<script type="text/javascript" src="js/index.js?v=2020.03.10.1"></script>
 	</body>
 </html>
